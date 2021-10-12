@@ -3,7 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Perkuliahan/SMSTR5/mobile/Mini Project/coffeeshop/app/src/main/res/layout/activity_main.xml" value="0.35413642960812775" />
+        <entry key="..\:/Perkuliahan/SMSTR5/mobile/Mini Project/coffeeshop/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.14322916666666666" />
+        <entry key="..\:/Perkuliahan/SMSTR5/mobile/Mini Project/coffeeshop/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.14322916666666666" />
+        <entry key="..\:/Perkuliahan/SMSTR5/mobile/Mini Project/coffeeshop/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.14322916666666666" />
+        <entry key="..\:/Perkuliahan/SMSTR5/mobile/Mini Project/coffeeshop/app/src/main/res/layout/activity_americano.xml" value="0.264" />
+        <entry key="..\:/Perkuliahan/SMSTR5/mobile/Mini Project/coffeeshop/app/src/main/res/layout/activity_americanoact.xml" value="0.16" />
+        <entry key="..\:/Perkuliahan/SMSTR5/mobile/Mini Project/coffeeshop/app/src/main/res/layout/activity_cappucino.xml" value="0.1234375" />
+        <entry key="..\:/Perkuliahan/SMSTR5/mobile/Mini Project/coffeeshop/app/src/main/res/layout/activity_latte.xml" value="0.264" />
+        <entry key="..\:/Perkuliahan/SMSTR5/mobile/Mini Project/coffeeshop/app/src/main/res/layout/activity_main.xml" value="0.536" />
+        <entry key="..\:/Perkuliahan/SMSTR5/mobile/Mini Project/coffeeshop/app/src/main/res/layout/activity_tes.xml" value="0.264" />
+        <entry key="..\:/Perkuliahan/SMSTR5/mobile/Mini Project/coffeeshop/app/src/main/res/layout/activity_test.xml" value="0.12708333333333333" />
+        <entry key="..\:/Perkuliahan/SMSTR5/mobile/Mini Project/coffeeshop/app/src/main/res/layout/fragment_dashboard.xml" value="0.12708333333333333" />
       </map>
     </option>
   </component>
