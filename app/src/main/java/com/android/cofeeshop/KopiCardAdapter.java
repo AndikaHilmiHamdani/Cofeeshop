@@ -1,6 +1,7 @@
 package com.android.cofeeshop;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +18,6 @@ import java.util.List;
 
 public class KopiCardAdapter extends RecyclerView.Adapter<KopiCardAdapter.CardViewHolder>{
     Context context;
-
     private List<KopiModel> listCard;
     public KopiCardAdapter(Context context,List<KopiModel> listCard) {
         this.listCard = listCard;
@@ -33,6 +33,16 @@ public class KopiCardAdapter extends RecyclerView.Adapter<KopiCardAdapter.CardVi
     public CardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View view = layoutInflater.inflate(R.layout.kopi_list, parent,false);
+
+        //Intent to detail
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Context context = view.getContext();
+                Intent intent = new Intent(context, AmericanoActivity.class);
+                context.startActivity(intent);
+            }
+        });
         return new CardViewHolder(view);
     }
 
@@ -52,7 +62,6 @@ public class KopiCardAdapter extends RecyclerView.Adapter<KopiCardAdapter.CardVi
     public class CardViewHolder extends RecyclerView.ViewHolder {
         private TextView tvTitle,tvPrice,tvRating;
         private ImageView pict;
-
         public CardViewHolder(@NonNull View itemView) {
             super(itemView);
 

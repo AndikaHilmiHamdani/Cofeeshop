@@ -18,13 +18,16 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private KopiCardAdapter kopiCardAdapter;
     private List<KopiModel> kopiArrayList = new ArrayList<>();
-    CardView cardCappucino, cardLate,cardAmericano;
+    CardView cardCoffee, cardLate,cardAmericano;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        cardCoffee = findViewById(R.id.cardCoffee);
+        //get data
         getKopi();
+
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         kopiCardAdapter = new KopiCardAdapter(kopiArrayList);
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
@@ -45,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
         kopiArrayList.add(new KopiModel("Americano","4.7","18.000",R.drawable.kopi2));
         kopiArrayList.add(new KopiModel("Cappucino","4.6","17.000",R.drawable.kopi3));
     }
+
 
 
 }
