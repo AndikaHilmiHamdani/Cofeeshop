@@ -13,15 +13,21 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.text.BreakIterator;
 import java.util.ArrayList;
+import java.util.List;
 
 public class KopiCardAdapter extends RecyclerView.Adapter<KopiCardAdapter.CardViewHolder>{
     Context context;
 
-    private ArrayList<KopiModel> listCard;
-    public KopiCardAdapter(Context context,ArrayList<KopiModel> listCard) {
+    private List<KopiModel> listCard;
+    public KopiCardAdapter(Context context,List<KopiModel> listCard) {
         this.listCard = listCard;
         this.context = context;
     }
+
+    public KopiCardAdapter(List<KopiModel> kopiArrayList) {
+        this.listCard = kopiArrayList;
+    }
+
     @NonNull
     @Override
     public CardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

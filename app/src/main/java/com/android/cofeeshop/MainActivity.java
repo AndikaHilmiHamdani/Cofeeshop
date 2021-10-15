@@ -13,11 +13,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    private RecyclerView recyclerView;
     private KopiCardAdapter kopiCardAdapter;
-    private ArrayList<KopiModel> kopiArrayList;
+    private List<KopiModel> kopiArrayList = new ArrayList<>();
     CardView cardCappucino, cardLate,cardAmericano;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,17 +25,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         getKopi();
-        recyclerView = findViewById(R.id.recyclerView);
-        kopiCardAdapter = new KopiCardAdapter(this,kopiArrayList);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(MainActivity.this);
-        recyclerView.setLayoutManager(layoutManager);
-
+        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        kopiCardAdapter = new KopiCardAdapter(kopiArrayList);
+        LinearLayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+        mLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setAdapter(kopiCardAdapter);
 
     }
 
     private void getKopi() {
         kopiArrayList = new ArrayList<>();
+        kopiArrayList.add(new KopiModel("Americano","4.7","18.000",R.drawable.kopi2));
+        kopiArrayList.add(new KopiModel("Cappucino","4.6","17.000",R.drawable.kopi3));
+        kopiArrayList.add(new KopiModel("Americano","4.7","18.000",R.drawable.kopi2));
+        kopiArrayList.add(new KopiModel("Cappucino","4.6","17.000",R.drawable.kopi3));
+        kopiArrayList.add(new KopiModel("Americano","4.7","18.000",R.drawable.kopi2));
+        kopiArrayList.add(new KopiModel("Cappucino","4.6","17.000",R.drawable.kopi3));
         kopiArrayList.add(new KopiModel("Americano","4.7","18.000",R.drawable.kopi2));
         kopiArrayList.add(new KopiModel("Cappucino","4.6","17.000",R.drawable.kopi3));
     }
