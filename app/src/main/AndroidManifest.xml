@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cofeeshop">
-
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -21,13 +20,13 @@
         </activity>
         <activity
             android:name=".Cappucino"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".Latte"
-            android:exported="true"></activity>
+            android:exported="true" />
         <activity
             android:name=".AmericanoActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

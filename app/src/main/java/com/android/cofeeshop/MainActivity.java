@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         //get data
         getKopi();
 
+        //define kopi recyclerview
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         kopiCardAdapter = new KopiCardAdapter(kopiArrayList);
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
@@ -39,14 +40,14 @@ public class MainActivity extends AppCompatActivity {
 
     private void getKopi() {
         kopiArrayList = new ArrayList<>();
-        kopiArrayList.add(new KopiModel("Americano","4.7","18.000",R.drawable.kopi2));
-        kopiArrayList.add(new KopiModel("Cappucino","4.6","17.000",R.drawable.kopi3));
-        kopiArrayList.add(new KopiModel("Americano","4.7","18.000",R.drawable.kopi2));
-        kopiArrayList.add(new KopiModel("Cappucino","4.6","17.000",R.drawable.kopi3));
-        kopiArrayList.add(new KopiModel("Americano","4.7","18.000",R.drawable.kopi2));
-        kopiArrayList.add(new KopiModel("Cappucino","4.6","17.000",R.drawable.kopi3));
-        kopiArrayList.add(new KopiModel("Americano","4.7","18.000",R.drawable.kopi2));
-        kopiArrayList.add(new KopiModel("Cappucino","4.6","17.000",R.drawable.kopi3));
+        kopiArrayList.add(new KopiModel("Americano","4.7", "blabla",18000,R.drawable.kopi2));
+        kopiArrayList.add(new KopiModel("Cappucino","4.6","abc",17000,R.drawable.kopi3));
+        kopiArrayList.add(new KopiModel("Americano","4.7","tes",18000,R.drawable.kopi2));
+        kopiArrayList.add(new KopiModel("Cappucino","4.6","y",17000,R.drawable.kopi3));
+        kopiArrayList.add(new KopiModel("Americano","4.7","g",18000,R.drawable.kopi2));
+        kopiArrayList.add(new KopiModel("Cappucino","4.6","o",17000,R.drawable.kopi3));
+        kopiArrayList.add(new KopiModel("Americano","4.7","ok",18000,R.drawable.kopi2));
+        kopiArrayList.add(new KopiModel("Cappucino","4.6","dh",17000,R.drawable.kopi3));
     }
 
 

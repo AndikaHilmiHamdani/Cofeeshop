@@ -1,22 +1,23 @@
 package com.android.cofeeshop;
 
 public class KopiModel {
-    private String title, rating, price;
-    int image;
+    private String title, rating,desc;
+    int image, price;
     public KopiModel() {
     }
-    public KopiModel(String title, String rating, String price,int image) {
+    public KopiModel(String title, String rating,String desc, int price,int image) {
         this.title = title;
         this.rating = rating;
         this.price = price;
         this.image=image;
+        this.desc=desc;
     }
 
     public void setTitle(String title) {
         this.title = title;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
@@ -32,7 +33,7 @@ public class KopiModel {
         return image;
     }
 
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
 
@@ -42,5 +43,13 @@ public class KopiModel {
 
     public String getTitle() {
         return title;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public String getDesc() {
+        return desc;
     }
 }

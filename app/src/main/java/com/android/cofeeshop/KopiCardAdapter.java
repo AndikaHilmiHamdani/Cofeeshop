@@ -18,20 +18,23 @@ import java.util.List;
 
 public class KopiCardAdapter extends RecyclerView.Adapter<KopiCardAdapter.CardViewHolder>{
     Context context;
-    private List<KopiModel> listCard;
-    public KopiCardAdapter(Context context,List<KopiModel> listCard) {
-        this.listCard = listCard;
+
+    //kopi list
+    private List<KopiModel> kopiCard;
+    public KopiCardAdapter(Context context,List<KopiModel> kopiCard) {
+        this.kopiCard = kopiCard;
         this.context = context;
     }
 
     public KopiCardAdapter(List<KopiModel> kopiArrayList) {
-        this.listCard = kopiArrayList;
+        this.kopiCard = kopiArrayList;
     }
 
     @NonNull
     @Override
     public CardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+        //kopi_list layout
         View view = layoutInflater.inflate(R.layout.kopi_list, parent,false);
 
         //Intent to detail
@@ -48,19 +51,25 @@ public class KopiCardAdapter extends RecyclerView.Adapter<KopiCardAdapter.CardVi
 
     @Override
     public void onBindViewHolder(@NonNull CardViewHolder holder, int position) {
-        holder.tvTitle.setText(listCard.get(position).getTitle());
-        holder.tvPrice.setText(listCard.get(position).getPrice());
-        holder.tvRating.setText(listCard.get(position).getRating());
-        holder.pict.setImageResource(listCard.get(position).getImage());
+
+        //Kopi
+        holder.tvTitle.setText(kopiCard.get(position).getTitle());
+        holder.tvPrice.setText(String.valueOf(kopiCard.get(position).getPrice()));
+        holder.tvRating.setText(kopiCard.get(position).getRating());
+        //holder.tvDesc.setText(kopiCard.get(position).getDesc());
+        holder.pict.setImageResource(kopiCard.get(position).getImage());
+
+        //Detail
+
     }
 
     @Override
     public int getItemCount() {
-        return listCard.size();
+        return kopiCard.size();
     }
 
     public class CardViewHolder extends RecyclerView.ViewHolder {
-        private TextView tvTitle,tvPrice,tvRating;
+        private TextView tvTitle,tvPrice,tvRating,tvDesc;
         private ImageView pict;
         public CardViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -68,7 +77,9 @@ public class KopiCardAdapter extends RecyclerView.Adapter<KopiCardAdapter.CardVi
             tvTitle = itemView.findViewById(R.id.tvTitle);
             tvPrice = itemView.findViewById(R.id.tvPrice);
             tvRating = itemView.findViewById(R.id.tvRating);
+            //tvDesc = itemView.findViewById(R.id.tvDesc);
             pict = itemView.findViewById(R.id.imgKopi);
         }
+
     }
 }
