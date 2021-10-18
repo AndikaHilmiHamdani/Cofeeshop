@@ -1,55 +1,55 @@
 package com.android.cofeeshop;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageButton;
-import android.widget.ImageView;
+import android.view.MenuItem;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.fragment.app.Fragment;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity {
-    private KopiCardAdapter kopiCardAdapter;
-    private List<KopiModel> kopiArrayList = new ArrayList<>();
-    CardView cardCoffee, cardLate,cardAmericano;
+
+public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        cardCoffee = findViewById(R.id.cardCoffee);
-        //get data
-        getKopi();
-
-        //define kopi recyclerview
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
-        kopiCardAdapter = new KopiCardAdapter(kopiArrayList);
-        LinearLayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-        mLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-        recyclerView.setLayoutManager(mLayoutManager);
-        recyclerView.setAdapter(kopiCardAdapter);
+        // kita set default nya Home Fragment
+        loadFragment(new HomeFragment());
+        // inisialisasi BottomNavigaionView
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bn_main);
+        // beri listener pada saat item/menu bottomnavigation terpilih
+        bottomNavigationView.setOnNavigationItemSelectedListener(this);
 
     }
 
-    private void getKopi() {
-        kopiArrayList = new ArrayList<>();
-        kopiArrayList.add(new KopiModel("Americano","4.7", "blabla",18000,R.drawable.kopi2));
-        kopiArrayList.add(new KopiModel("Cappucino","4.6","abc",17000,R.drawable.kopi3));
-        kopiArrayList.add(new KopiModel("Americano","4.7","tes",18000,R.drawable.kopi2));
-        kopiArrayList.add(new KopiModel("Cappucino","4.6","y",17000,R.drawable.kopi3));
-        kopiArrayList.add(new KopiModel("Americano","4.7","g",18000,R.drawable.kopi2));
-        kopiArrayList.add(new KopiModel("Cappucino","4.6","o",17000,R.drawable.kopi3));
-        kopiArrayList.add(new KopiModel("Americano","4.7","ok",18000,R.drawable.kopi2));
-        kopiArrayList.add(new KopiModel("Cappucino","4.6","dh",17000,R.drawable.kopi3));
+    private boolean loadFragment(Fragment fragment){
+        if (fragment != null) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fl_container, fragment)
+                    .commit();
+            return true;
+        }
+        return false;
     }
 
-
-
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        Fragment fragment = null;
+        switch (menuItem.getItemId()){
+            case R.id.home_menu:
+                fragment = new HomeFragment();
+                break;
+            case R.id.search_menu:
+                fragment = new NotificationFragment();
+                break;
+            case R.id.favorite_menu:
+                fragment = new FavoriteFragment();
+                break;
+        }
+        return loadFragment(fragment);
+    }
 }

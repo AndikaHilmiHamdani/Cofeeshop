@@ -5,15 +5,12 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.text.BreakIterator;
-import java.util.ArrayList;
 import java.util.List;
 
 public class KopiCardAdapter extends RecyclerView.Adapter<KopiCardAdapter.CardViewHolder>{
@@ -21,7 +18,7 @@ public class KopiCardAdapter extends RecyclerView.Adapter<KopiCardAdapter.CardVi
 
     //kopi list
     private List<KopiModel> kopiCard;
-    public KopiCardAdapter(Context context,List<KopiModel> kopiCard) {
+    public KopiCardAdapter(Context context, List<KopiModel> kopiCard) {
         this.kopiCard = kopiCard;
         this.context = context;
     }

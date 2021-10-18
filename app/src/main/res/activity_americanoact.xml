@@ -1,49 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context=".Latte">
+    tools:context=".Latte"
+    android:background="@color/brown"
+    >
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="42dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/panah" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="42dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="10dp"
-        android:layout_alignParentRight="true"
-        android:src="@drawable/keranjang"
-    />
+        <ImageButton
+            android:layout_width="42dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/panah">
 
+        </ImageButton>
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="300dp"
-        android:id="@+id/firstCardView"
-        android:layout_height="320dp"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="10dp"
-        android:layout_centerHorizontal="true">
+        <ImageButton
+            android:layout_marginLeft="300dp"
+            android:layout_width="42dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/keranjang">
 
+        </ImageButton>
+    </LinearLayout>
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="1dp"
-            app:cardBackgroundColor="#e17f42">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="1dp"
+        app:cardBackgroundColor="#e17f42">
+
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_width="300dp"
+            android:id="@+id/firstCardView"
+            android:layout_height="320dp"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp"
+            android:layout_centerHorizontal="true">
 
             <ImageView
                 android:id="@+id/imageViewInfo"
                 android:layout_width="250dp"
                 android:layout_height="250dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="25dp"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/kopi2" />
+                android:src="@drawable/kopi3" />
 
             <TextView
                 android:id="@+id/drinkNameinInfo"
@@ -51,10 +63,10 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/imageViewInfo"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="275dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
-                android:text="Cappucino"
+                android:text="Americano"
                 android:textColor="@android:color/black"
                 android:textSize="30sp"
                 android:textStyle="bold" />
@@ -67,47 +79,47 @@
                 android:layout_alignRight="@+id/drinkNameinInfo"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_marginTop="25dp"
-                android:layout_marginEnd="15dp"
-                android:layout_marginRight="15dp"
-                android:text="IDR 15K"
+                android:layout_marginLeft="225dp"
+                android:layout_marginTop="285dp"
+                android:text="IDR 17K"
                 android:textColor="@android:color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-        </RelativeLayout>
+        </androidx.cardview.widget.CardView>
 
+    </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="10dp"
-        app:cardElevation="10dp"
-        android:id="@+id/secondCardView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/firstCardView">
+        android:layout_height="450dp"
+        android:layout_marginTop="400dp">
 
-        <RelativeLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="324dp"
-            android:layout_marginTop="10dp">
+            android:layout_height="match_parent"
+            app:cardCornerRadius="10dp"
+            app:cardElevation="10dp"
+            android:id="@+id/secondCardView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/firstCardView">
+
 
             <ImageButton
                 android:id="@+id/tambah"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginLeft="130dp"
+                android:layout_marginLeft="250dp"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/plus" />
-
 
             <TextView
                 android:id="@+id/jumlah"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="175dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginRight="20dp"
                 android:layout_toRightOf="@+id/tambah"
                 android:text="0"
@@ -119,17 +131,10 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginBottom="10dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="15dp"
                 android:layout_toRightOf="@+id/jumlah"
                 android:background="@drawable/minus" />
-
-
-            <RadioGroup
-                android:id="@+id/radioGroup"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/total"
-                android:layout_centerHorizontal="true"
-                android:orientation="horizontal">
 
 
                 <TextView
@@ -137,39 +142,29 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="75dp"
                     android:layout_marginEnd="10dp"
                     android:layout_marginBottom="10dp"
-                    android:text="@string/cappucino"
+                    android:text="@string/americano"
                     android:textSize="15sp"
                     android:textStyle="italic" />
-
-                <RadioButton
-                    android:id="@+id/coldRadioButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Iced" />
-
-            </RadioGroup>
 
 
             <Button
                 android:id="@+id/addtocart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/deskripsi"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="149dp"
+                android:layout_marginTop="200dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginBottom="10dp"
                 android:background="#e17f42"
                 android:text="Add to cart"
                 android:textColor="@android:color/white"
-                android:textStyle="bold"
-                tools:ignore="NotSibling" />
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
 
-        </RelativeLayout>
-    </androidx.cardview.widget.CardView>
+    </LinearLayout>
 
 </RelativeLayout>
 

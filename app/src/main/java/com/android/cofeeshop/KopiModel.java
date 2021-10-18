@@ -5,7 +5,7 @@ public class KopiModel {
     int image, price;
     public KopiModel() {
     }
-    public KopiModel(String title, String rating,String desc, int price,int image) {
+    public KopiModel(String title, String rating, String desc, int price, int image) {
         this.title = title;
         this.rating = rating;
         this.price = price;
